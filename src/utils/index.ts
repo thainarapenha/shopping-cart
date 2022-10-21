@@ -1,0 +1,1 @@
+export { conexaoAPI } from "./conexaoAPI";
