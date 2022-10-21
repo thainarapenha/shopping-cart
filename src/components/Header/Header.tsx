@@ -2,7 +2,6 @@ import React from "react";
 import Carrinho from "../../assets/img/carrinho.svg";
 import iconUser from "../../assets/img/iconUser.svg";
 import Logo from "../../assets/img/logo-fireStore.svg";
-import { Typography } from "@mui/material";
 import { Container, NavMenu, ContainerLogo, SectionMenu, ContainerCarrinho, ContainerUser, Items } from "./Header.styles";
 
 export const Header: React.FC = () => {

@@ -6,6 +6,7 @@ export const Container = styled("div")({
   justifyContent: "space-between",
   width: "100%",
   height: "80px",
+  background: "#FFFFFF",
 });
 
 export const SectionMenu = styled("section")({

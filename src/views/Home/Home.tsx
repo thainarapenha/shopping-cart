@@ -1,8 +1,14 @@
 import React from "react";
-import { Header } from "../../components/Header";
+import { MainContainer, BoxProdutos } from "./Home.styles";
+// import { Card } from "../../components/CardProduto/CardProduto.styles";
+import { CardProduto } from "../../components/CardProduto";
 
 export const Home: React.FC = () => {
   return (
-    <Header />
+    <MainContainer>
+      <BoxProdutos>
+        <CardProduto/>
+      </BoxProdutos>
+    </MainContainer>
   );
 }
