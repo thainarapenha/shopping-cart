@@ -1,36 +1,33 @@
 import React from "react";
 import { Box } from "@mui/system";
-import { Card,TitleCard, DescriptionCard, PriceCard, InstallmentsCard, FooterCard, BoxInfo  } from "./CardProduto.styles";
-import imagem from "../../assets/img/image4.svg";
 import { Button } from "@mui/material";
+import { Card, TitleCard, DescriptionCard, PriceCard, InstallmentsCard, FooterCard, BoxInfo } from "./CardProduto.styles";
 
-export const CardProduto: React.FC = () => {
+interface ProductInfo {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+}
+
+export const CardProduto: React.FC<ProductInfo> = ({ id, image, title, description, price, }) => {
   return (
     <Card>
-      <BoxInfo>
+      <BoxInfo key={id}>
         <Box>
-          <img src={imagem}/>
+          <img src={image} />
         </Box>
 
         <Box>
-          <TitleCard>Nome do produto</TitleCard>
-          <DescriptionCard>Description</DescriptionCard>
-          <PriceCard>Price</PriceCard>
-          <InstallmentsCard>Parcelado</InstallmentsCard>
+          <TitleCard>{title}</TitleCard>
+          <DescriptionCard>{description}</DescriptionCard>
+          <PriceCard>{price}</PriceCard>
+          {/* <InstallmentsCard>Parcelado</InstallmentsCard> */}
         </Box>
 
         <FooterCard>
-          <Box>
-            color
-          </Box>
-
-          <Box>
-            <Button
-              variant="contained"
-              >
-              Adicionar ao carrinho
-            </Button>
-          </Box>
+          <Button variant="contained">Adicionar ao carrinho</Button>
         </FooterCard>
       </BoxInfo>
     </Card>
