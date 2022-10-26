@@ -3,8 +3,17 @@ import { MainContainer, BoxProdutos } from "./Home.styles";
 import { CardProduto } from "../../components/CardProduto";
 import { conexaoAPI } from "../../services/conexaoAPI";
 
+interface ProductInfo {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  count: number;
+}
+
 export const Home: React.FC = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<ProductInfo[]>([]);
 
   const fetchData = async () => {
     const response = await conexaoAPI.get("/products");
@@ -20,7 +29,7 @@ export const Home: React.FC = () => {
     <MainContainer>
       <BoxProdutos>
         {data?.map(item =>
-          <CardProduto id={0} title={""} description={""} image={""} price={100}/>
+          <CardProduto id={item.id} title={item.title} description={item.description} image={item.image} price={item.price} count={item.count}/>
         )}
       </BoxProdutos>
     </MainContainer>
